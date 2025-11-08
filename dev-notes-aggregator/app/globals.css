@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #00ff00;
+  --accent: #00ff00;
+  --muted: #008800;
+  --cyan: #00ffff;
+  --yellow: #ffff00;
+  --magenta: #ff00ff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Courier New', monospace;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Vintage hacker terminal style */
+.terminal {
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.terminal-cyan {
+  border-color: var(--cyan);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.terminal-yellow {
+  border-color: var(--yellow);
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+}
+
+.terminal-magenta {
+  border-color: var(--magenta);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.glow {
+  text-shadow: 0 0 5px var(--accent);
+}
+
+.glow-cyan {
+  text-shadow: 0 0 5px var(--cyan);
+  color: var(--cyan);
+}
+
+.glow-yellow {
+  text-shadow: 0 0 5px var(--yellow);
+  color: var(--yellow);
+}
+
+.glow-magenta {
+  text-shadow: 0 0 5px var(--magenta);
+  color: var(--magenta);
+}
+
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+/* Filter badges */
+.filter-badge {
+  @apply text-xs border px-3 py-1 cursor-pointer transition-all;
+}
+
+.filter-badge:hover {
+  @apply shadow-md;
+}
+
+.filter-badge.active {
+  @apply bg-green-900 border-green-400;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+/* Note cards */
+.note-card {
+  @apply border-l-4 pl-4 py-3 transition-all;
+}
+
+.note-card:hover {
+  @apply border-green-400;
+}
+
+/* Developer avatar */
+.developer-avatar {
+  @apply w-8 h-8 border-2 border-green-500 object-cover;
+}

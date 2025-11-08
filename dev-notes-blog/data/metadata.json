@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "profile": {
+    "name": "John Developer",
+    "avatar": "https://avatars.githubusercontent.com/u/1?v=4",
+    "contact": {
+      "github": "johndeveloper",
+      "linkedin": "https://linkedin.com/in/johndeveloper",
+      "email": "john@devnotes.dev",
+      "twitter": "@johndev",
+      "website": "https://devnotes.dev",
+      "other": [
+        {
+          "platform": "Dev.to",
+          "url": "https://dev.to/johndeveloper",
+          "label": "My Blog Posts"
+        }
+      ]
+    }
+  },
+  "fileList": {
+    "url": "/api/notes.json",
+    "format": "json",
+    "lastUpdated": "2025-11-08T00:00:00Z"
+  }
+}

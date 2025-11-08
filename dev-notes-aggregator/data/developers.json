@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Example Developer 1",
+    "metadataUrl": "http://localhost:3000/api/metadata.json",
+    "color": "#00ff00"
+  },
+  {
+    "name": "Example Developer 2",
+    "metadataUrl": "https://another-blog.vercel.app/api/metadata.json",
+    "color": "#00ffff"
+  }
+]
