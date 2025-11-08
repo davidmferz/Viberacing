@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import metadata from "@/data/metadata.json";
+import profileData from "@/data/metadata.json";
 
-export const meta: Metadata = {
-  title: `${metadata.profile.name} - Dev Notes`,
+export const metadata: Metadata = {
+  title: `${profileData.profile.name} - Dev Notes`,
   description: "Developer notes in the style of John Carmack",
 };
 
@@ -18,26 +18,26 @@ export default function RootLayout({
         <div className="min-h-screen p-4 md:p-8">
           <header className="terminal max-w-4xl mx-auto p-6 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              {metadata.profile.avatar && (
+              {profileData.profile.avatar && (
                 <img
-                  src={metadata.profile.avatar}
-                  alt={metadata.profile.name}
+                  src={profileData.profile.avatar}
+                  alt={profileData.profile.name}
                   className="w-16 h-16 border-2 border-green-500"
                 />
               )}
               <div>
                 <h1 className="text-3xl font-bold glow mb-2">
-                  {metadata.profile.name}
+                  {profileData.profile.name}
                 </h1>
                 <p className="text-green-400">{'>'} DEV NOTES SYSTEM v1.0</p>
               </div>
             </div>
 
-            {metadata.profile.contact && (
+            {profileData.profile.contact && (
               <div className="flex flex-wrap gap-4 text-sm border-t border-green-800 pt-4">
-                {metadata.profile.contact.github && (
+                {profileData.profile.contact.github && (
                   <a
-                    href={`https://github.com/${metadata.profile.contact.github}`}
+                    href={`https://github.com/${profileData.profile.contact.github}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
@@ -45,9 +45,9 @@ export default function RootLayout({
                     [GitHub]
                   </a>
                 )}
-                {metadata.profile.contact.linkedin && (
+                {profileData.profile.contact.linkedin && (
                   <a
-                    href={metadata.profile.contact.linkedin}
+                    href={profileData.profile.contact.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
@@ -55,9 +55,9 @@ export default function RootLayout({
                     [LinkedIn]
                   </a>
                 )}
-                {metadata.profile.contact.twitter && (
+                {profileData.profile.contact.twitter && (
                   <a
-                    href={`https://twitter.com/${metadata.profile.contact.twitter.replace('@', '')}`}
+                    href={`https://twitter.com/${profileData.profile.contact.twitter.replace('@', '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
@@ -65,9 +65,9 @@ export default function RootLayout({
                     [Twitter]
                   </a>
                 )}
-                {metadata.profile.contact.website && (
+                {profileData.profile.contact.website && (
                   <a
-                    href={metadata.profile.contact.website}
+                    href={profileData.profile.contact.website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
